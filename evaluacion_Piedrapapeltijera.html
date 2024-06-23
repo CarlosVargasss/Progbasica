@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8" />
+        <title>Evaluación piedra papel y tijera</title>
+        <script>
+
+            function aleatorio(min,max){
+                let random = Math.floor(Math.random()*(max-max+1)+min)
+                return random
+            }
+
+            function nombres(eleccion){
+                let jugada = ""
+                if(eleccion == 1){
+                    jugada = "Piedra"
+                } else if(eleccion == 2){
+                    jugada = "Papel"
+                } else if(eleccion == 3){
+                    jugada = "Tijera"
+                } else {
+                    jugada = "APRENDE A LEER BRO"
+                }
+                return jugada
+            }
+
+            // piedra=1 , papel=2 , tijera=3
+            let pc = aleatorio(1,3);
+            let jugador = prompt("Elige 1 para piedra, 2 para papel o 3 para tijera")
+
+            alert("El pc eligió " + nombres(pc))
+            alert("Elegiste " + nombres(jugador))
+
+            //COMBATE: Verlo solo por el lado de la victoria
+
+            if(jugador == pc){
+                alert("¡EMPATE!")
+            } else if(jugador == 1 && pc == 3){
+                alert("¡GANASTE!")
+            } else if(jugador == 3 && pc == 2){
+                alert("¡GANASTE!")
+            } else if(jugador == 2 && pc==1){
+                alert("¡GANASTE!")
+            } else {
+                alert("PERDISTE UnU")
+            }
+
+        </script>
+    </head>
+    <body>
+        <h1>¡Juego de pidra, papel y tijera!</h1>
+    </body>
+</html>
